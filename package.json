@@ -1,0 +1,67 @@
+{
+  "name": "SEER_BADGING",
+  "version": "1.0.0",
+  "private": true,
+  "author": "kizaru",
+  "description": "an app to manage data for events",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "exceljs": "^4.3.0",
+    "html2canvas": "^1.4.1",
+    "path-browserify": "^1.0.1",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "react-to-print": "^2.14.11",
+    "sqlite3": "^5.0.0",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "dev": "concurrently -k \"cross-env BROWSER=none npm run react-start\" \"npm:electron\"",
+    "electron": "wait-on tcp:3000 && electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "electron": "^22.1.0",
+    "electron-builder": "^23.6.0",
+    "tailwindcss": "^3.2.4",
+    "wait-on": "^7.0.1"
+  },
+  "build": {
+    "appId": "com,build.app",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "icon": "./build/logo.png"
+    }
+  }
+}
