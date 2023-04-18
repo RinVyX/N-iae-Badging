@@ -1,1 +1,5 @@
-npm install react-scripts --save
+npm run react-build
+npm i -D electron electron-is-dev
+npm i -D concurrently wait-on
+npm run react-build
+npm run dev
